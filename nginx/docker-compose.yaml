@@ -1,0 +1,9 @@
+version: "3"
+services: 
+    nginx:
+        container_name: nginx_chat
+        build: .
+        ports: 
+            - "80:80"
+        volumes: 
+            - '.:/etc/nginx/conf.d/'

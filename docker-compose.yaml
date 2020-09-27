@@ -1,0 +1,57 @@
+version: "3"
+services: 
+    mongo_account_chat:
+        image: mongo
+        container_name: mongo_account_chat
+        volumes:
+            - ../api-account-chat/data/mongo:/data/db
+        # command: mongod --replSet my-mongo-set
+        # deploy:
+        #     resources:
+        #         limits:
+        #             memory: 50M
+        #         reservations:
+        #             memory: 20M
+    api_account_chat:
+        container_name: api_account_chat
+        build: ../api-account-chat
+        volumes: 
+            - ../api-account-chat:/myapp
+        command: "npm run dev"
+        # command: "npm start"
+        depends_on: 
+            - mongo_account_chat
+        restart: on-failure
+        # deploy:
+        #     resources:
+        #         limits:
+        #             memory: 150M
+        #         reservations:
+        #             memory: 100M
+    api_gateway_chat:
+        container_name: api_gateway_chat
+        build: .
+        volumes: 
+            - .:/myapp
+        command: "npm run dev"
+        # command: "npm start"
+        restart: on-failure
+        depends_on:
+            - mongo_account_chat
+        ports: 
+            - "80:3000"
+        # deploy:
+        #     resources:
+        #         limits:
+        #             memory: 150M
+        #         reservations:
+        #             memory: 100M
+    # nginx:
+    #     container_name: nginx_chat
+    #     build: ./nginx
+    #     ports: 
+    #         - "80:80"
+    #     volumes: 
+    #         - './nginx:/etc/nginx/conf.d/'
+    #     depends_on: 
+    #         - api_gateway_chat

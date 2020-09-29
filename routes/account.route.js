@@ -18,5 +18,7 @@ router.put("/api/v0/users/update", authMiddleWare.isAuth, accountServiceProxy);
 router.get("/api/v0/users/profile", accountServiceProxy);
 router.get("/api/v0/users/search", accountServiceProxy);
 router.get("/api/v0/users/list", accountServiceProxy);
+router.post("/api/v0/users/add",accountServiceProxy);
+router.get("/api/v0/users/getAllUser",accountServiceProxy)
 
 module.exports = router;

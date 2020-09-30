@@ -1,4 +1,4 @@
-image: 'node:latest'
+image: 'node:20.04'
 stages:
   - deploy
 deploy:
@@ -9,7 +9,12 @@ deploy:
     - mkdir -p ~/.ssh
     - echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
     - chmod 700 ~/.ssh/id_rsa
-    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    - eval "$(ssh-agent -s)"
+    - ssh-add ~/.ssh/id_rsa
+    - ssh-keyscan -H 'gitlab.com' >> ~/.ssh/known_hosts
+    - cd /home/api-gateway-chat/
+    - ls
+    - git pull origin master
   only: 
     - master
   script: 

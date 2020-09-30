@@ -16,5 +16,5 @@ deploy:
     - master
   script: 
     - echo "Deploying to server"
-    - ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -T root@52.221.187.39 -p 22 "cd /home && ;s"
+    - ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -T root@52.221.187.39 -p 22 "cd /home && ls"
     - exit

@@ -12,7 +12,6 @@ deploy:
     - eval "$(ssh-agent -s)"
     - ssh-add ~/.ssh/id_rsa
     - ssh-keyscan -H 'gitlab.com' >> ~/.ssh/known_hosts
-    - ssh root@3.0.95.59
     - cd /home/api-gateway-chat/
     - ls
     - git pull origin master

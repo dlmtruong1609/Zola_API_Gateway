@@ -21,4 +21,5 @@ router.get("/api/v0/users/list", accountServiceProxy);
 router.post("/api/v0/users/add",accountServiceProxy);
 router.get("/api/v0/users/getAllUser",accountServiceProxy);
 router.get("/api/v0/users/findUserByPhone",accountServiceProxy);
+router.put("/api/v0/users/updateByPhone",accountServiceProxy);
 module.exports = router;

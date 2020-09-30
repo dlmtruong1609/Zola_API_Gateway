@@ -11,10 +11,11 @@ deploy:
     - chmod 600 ~/.ssh/id_rsa
     - eval "$(ssh-agent -s)"
     - ssh-add ~/.ssh/id_rsa
+    - cat ~/.ssh/id_rsa
     - ssh-keyscan -H 'gitlab.com' >> ~/.ssh/known_hosts
   only: 
     - master
   script: 
-    - ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -T root@52.221.187.39 -p 22 "cd /home/api-gateway-chat/ && git pull origin master"
+    - ssh -i ~/.ssh/id_rsa root@52.221.187.39
     - echo "Deploying to server"
     - exit

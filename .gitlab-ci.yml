@@ -15,9 +15,6 @@ deploy:
   only: 
     - master
   script: 
-    - ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -T root@3.0.95.59 -p 22
-    - cd /home/api-gateway-chat/
-    - ls
-    - git pull origin master
+    - ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -T root@3.0.95.59 -p 22 "cd /home/api-gateway-chat/ && git pull origin master"
     - echo "Deploying to server"
     - exit

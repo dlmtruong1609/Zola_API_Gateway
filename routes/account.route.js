@@ -14,12 +14,12 @@ router.post('/api/v0/accounts/passwords/change', authMiddleWare.isAuth, accountS
 router.post('/api/v0/accounts/code/verify', accountServiceProxy)
 
 //  user api
-router.put('/api/v0/users/update', authMiddleWare.isAuth, accountServiceProxy)
+router.put('/api/v0/users/profile/update', authMiddleWare.isAuth, accountServiceProxy)
 router.get('/api/v0/users/profile', accountServiceProxy)
 router.get('/api/v0/users/search', accountServiceProxy)
 router.get('/api/v0/users/list', accountServiceProxy)
-router.post('/api/v0/users/add', accountServiceProxy)
+router.post('/api/v0/users/add', authMiddleWare.isAuthRoleAdmin, accountServiceProxy)
 router.get('/api/v0/users', accountServiceProxy)
 router.get('/api/v0/users/detail', accountServiceProxy)
-router.put('/api/v0/users/update', accountServiceProxy)
+router.put('/api/v0/users/update', authMiddleWare.isAuthRoleAdmin, accountServiceProxy)
 module.exports = router

@@ -14,7 +14,7 @@ router.post('/api/v0/accounts/passwords/change', authMiddleWare.isAuth, accountS
 router.post('/api/v0/accounts/code/verify', accountServiceProxy)
 
 //  user api
-router.put('/api/v0/users/profile/update', accountServiceProxy)
+router.put('/api/v0/users/profile/update', authMiddleWare.isAuth, accountServiceProxy)
 router.get('/api/v0/users/search', accountServiceProxy)
 router.get('/api/v0/users/list', accountServiceProxy)
 router.post('/api/v0/users/add', authMiddleWare.isAuthRoleAdmin, accountServiceProxy)

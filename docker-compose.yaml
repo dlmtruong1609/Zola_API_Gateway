@@ -1,17 +1,5 @@
 version: "3"
 services: 
-    mongo_account_chat:
-        image: mongo
-        container_name: mongo_account_chat
-        volumes:
-            - ../api-account-chat/data/mongo:/data/db
-        # command: mongod --replSet my-mongo-set
-        # deploy:
-        #     resources:
-        #         limits:
-        #             memory: 50M
-        #         reservations:
-        #             memory: 20M
     api_account_chat:
         container_name: api_account_chat
         build: ../api-account-chat

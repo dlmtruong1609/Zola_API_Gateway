@@ -7,8 +7,6 @@ services:
             - ../api-account-chat:/myapp
         command: "npm run dev"
         # command: "npm start"
-        depends_on: 
-            - mongo_account_chat
         restart: on-failure
         # deploy:
         #     resources:
@@ -24,8 +22,6 @@ services:
         command: "npm run dev"
         # command: "npm start"
         restart: on-failure
-        depends_on:
-            - mongo_account_chat
         ports: 
             - "80:3000"
         # deploy:

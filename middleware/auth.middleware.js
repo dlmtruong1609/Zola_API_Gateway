@@ -57,33 +57,7 @@ const isAuthRoleAdmin = async (req, res, next) => {
   }
 }
 
-const isAuthRoleHost = async (req, res, next) => {
-  // Lấy token được gửi lên từ phía client
-  const tokenFromClient = req.body.token || req.query.token || req.headers['x-access-token']
-  if (tokenFromClient) {
-    // Nếu tồn tại token
-    try {
-      // Thực hiện giải mã token xem có hợp lệ hay không?
-      const decoded = await jwtHelper.verifyToken(tokenFromClient, accessTokenSecret)
-      if (decoded.data.role === 'HOST') {
-        // Nếu token hợp lệ, lưu thông tin giải mã được vào đối tượng req, dùng cho các xử lý ở phía sau.
-        req.jwtDecoded = decoded
-        // Cho phép req đi tiếp sang service.
-        next()
-      } else {
-        return res.status(403).send(new Response(true, CONSTANT.ACCESS_DENIED, null))
-      }
-    } catch (error) {
-      // Nếu giải mã gặp lỗi: Không đúng, hết hạn...etc:
-      return res.status(401).send(new Response(true, CONSTANT.UNAUTHORIZED, null))
-    }
-  } else {
-    // Không tìm thấy token trong request
-    return res.status(499).send(new Response(true, CONSTANT.NO_TOKEN_PROVIDED, null))
-  }
-}
 module.exports = {
   isAuth: isAuth,
-  isAuthRoleAdmin: isAuthRoleAdmin,
-  isAuthRoleHost: isAuthRoleHost
+  isAuthRoleAdmin: isAuthRoleAdmin
 }

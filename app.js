@@ -4,7 +4,8 @@ const logger = require('morgan')
 const accountRouter = require('./routes/account.route')
 
 const cors = require('cors')
-const whitelist = ['http://localhost:3000', 'https://localhost:3000', 'exp://127.0.0.1:19000', 'https://zola-admin.vercel.app']
+const whitelist = ['http://localhost:3000', 'https://localhost:3000', 'exp://127.0.0.1:19000',
+  'https://zola-admin.vercel.app', 'http://localhost:19002', 'https://localhost:19002', 'https://admin.zolavn.cf']
 const corsOptions = {
   origin: function (origin, callback) {
     if (!origin || whitelist.indexOf(origin) !== -1) {

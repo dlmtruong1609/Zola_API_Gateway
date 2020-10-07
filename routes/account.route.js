@@ -6,11 +6,11 @@ const accountServiceProxy = httpProxy('http://api_account_chat:3333')
 
 //  account api
 router.post('/api/v0/accounts/signin', accountServiceProxy)
-router.post('/api/v0/accounts/signup', accountServiceProxy)
-router.post('/api/v0/accounts/active', accountServiceProxy)
+router.post('/api/v0/accounts/signup', authMiddleWare.isAuth, accountServiceProxy)
 router.get('/api/v0/accounts/active/send', accountServiceProxy)
 router.get('/api/v0/accounts/passwords/forgot', accountServiceProxy)
 router.post('/api/v0/accounts/passwords/change', authMiddleWare.isAuth, accountServiceProxy)
+router.post('/api/v0/accounts/code/password/verify', accountServiceProxy)
 router.post('/api/v0/accounts/code/verify', accountServiceProxy)
 
 //  user api

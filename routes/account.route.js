@@ -14,13 +14,19 @@ router.post('/api/v0/accounts/passssswords/change', authMiddleWare.isAuth, accou
 router.post('/api/v0/accounts/code/verify', accountServiceProxy)
 
 //  user api
-router.put('/api/v0/users/update', authMiddleWare.isAuth, accountServiceProxy)
+router.put('/api/v0/users/update', accountServiceProxy)
 router.get('/api/v0/users/profile', accountServiceProxy)
 router.get('/api/v0/users/search', accountServiceProxy)
 router.get('/api/v0/users/list', accountServiceProxy)
 
-router.post('/api/v0/users/add', authMiddleWare.isAuth, accountServiceProxy)
+router.post('/api/v0/users/add', accountServiceProxy)
 router.get('/api/v0/users/getAllUser', accountServiceProxy)
 router.get('/api/v0/users/findUserByPhone', accountServiceProxy)
 router.put('/api/v0/users/updateByPhone', accountServiceProxy)
+
+
+router.get('/api/v0/users/addFriend', accountServiceProxy)
+
+router.get('/api/v0/users/listFriendRequest', accountServiceProxy)
+
 module.exports = router

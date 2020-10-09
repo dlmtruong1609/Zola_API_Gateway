@@ -25,8 +25,22 @@ router.get('/api/v0/users/findUserByPhone', accountServiceProxy)
 router.put('/api/v0/users/updateByPhone', accountServiceProxy)
 
 
-router.get('/api/v0/users/addFriend', accountServiceProxy)
+router.post('/api/v0/users/addFriend', accountServiceProxy)
+
+router.post('/api/v0/users/accepFriend', accountServiceProxy)
+
+router.post('/api/v0/users/declineFriend', accountServiceProxy)
 
 router.get('/api/v0/users/listFriendRequest', accountServiceProxy)
+
+router.get('/api/v0/users/getListFriendByPhoneUser', accountServiceProxy)
+
+router.get('/api/v0/users/getListFriendRequestByPhoneUser', accountServiceProxy)
+
+router.get('/api/v0/users/getListFriendContactByPhoneUser', accountServiceProxy)
+
+router.get('/api/v0/users/getListFriendPhoneBookByPhoneUser', accountServiceProxy)
+
+router.get('/api/v0/users/textSearch', accountServiceProxy)
 
 module.exports = router

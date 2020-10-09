@@ -21,4 +21,7 @@ router.get('/api/v0/users', authMiddleWare.isAuthRoleAdmin, accountServiceProxy)
 router.get('/api/v0/users/detail', authMiddleWare.isAuthRoleMember, accountServiceProxy)
 router.post('/api/v0/users/add', authMiddleWare.isAuthRoleAdmin, accountServiceProxy)
 router.put('/api/v0/users/update', authMiddleWare.isAuthRoleAdmin, accountServiceProxy)
+router.post('/api/v0/users/addFriend', accountServiceProxy)
+
+router.get('/api/v0/users/listFriendRequest', accountServiceProxy)
 module.exports = router

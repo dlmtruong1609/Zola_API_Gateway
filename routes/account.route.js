@@ -46,4 +46,6 @@ router.get('/api/v0/users/getListFriendPhoneBookByPhoneUser', accountServiceProx
 
 router.get('/api/v0/users/textSearch', accountServiceProxy)
 
+router.post('/api/v0/users/deleteFriend', accountServiceProxy)
+
 module.exports = router

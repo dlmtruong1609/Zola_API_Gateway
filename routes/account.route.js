@@ -23,29 +23,5 @@ router.get('/api/v0/users/detail', authMiddleWare.isAuthRoleMember, accountServi
 router.post('/api/v0/users/add', authMiddleWare.isAuthRoleAdmin, accountServiceProxy)
 router.put('/api/v0/users/update', authMiddleWare.isAuthRoleAdmin, accountServiceProxy)
 router.delete('/api/v0/users/delete', authMiddleWare.isAuthRoleAdmin, accountServiceProxy)
-router.post('/api/v0/users/addFriend', accountServiceProxy)
-
-// phonebook
-router.get('/api/v0/users/listFriendRequest', accountServiceProxy)
-
-router.post('/api/v0/users/addFriend', accountServiceProxy)
-
-router.post('/api/v0/users/accepFriend', accountServiceProxy)
-
-router.post('/api/v0/users/declineFriend', accountServiceProxy)
-
-router.get('/api/v0/users/listFriendRequest', accountServiceProxy)
-
-router.get('/api/v0/users/getListFriendByPhoneUser', accountServiceProxy)
-
-router.get('/api/v0/users/getListFriendRequestByPhoneUser', accountServiceProxy)
-
-router.get('/api/v0/users/getListFriendContactByPhoneUser', accountServiceProxy)
-
-router.get('/api/v0/users/getListFriendPhoneBookByPhoneUser', accountServiceProxy)
-
-router.get('/api/v0/users/textSearch', accountServiceProxy)
-
-router.post('/api/v0/users/deleteFriend', accountServiceProxy)
 
 module.exports = router

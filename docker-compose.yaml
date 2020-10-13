@@ -14,6 +14,20 @@ services:
         #             memory: 150M
         #         reservations:
         #             memory: 100M
+    api_phonebook_chat:
+        container_name: api_phonebook_chat
+        build: ../api-phonebook-chat
+        volumes: 
+            - ../api-phonebook-chat:/myapp
+        command: "npm run dev"
+        # command: "npm start"
+        restart: on-failure
+        # deploy:
+        #     resources:
+        #         limits:
+        #             memory: 150M
+        #         reservations:
+        #             memory: 100M
     api_gateway_chat:
         container_name: api_gateway_chat
         build: .

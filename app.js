@@ -2,10 +2,20 @@ const express = require('express')
 const logger = require('morgan')
 
 const accountRouter = require('./routes/account.route')
+const phoneBookRouter = require('./routes/phonebook.route')
 
 const cors = require('cors')
-const whitelist = ['http://localhost:3000', 'https://localhost:3000', 'exp://127.0.0.1:19000',
-  'https://zola-admin.vercel.app', 'http://localhost:19002', 'https://localhost:19002', 'https://admin.zolavn.cf']
+const whitelist = [
+  'http://localhost:3000',
+  'https://localhost:3000',
+  'exp://127.0.0.1:19000',
+  'https://zola-admin.vercel.app',
+  'http://localhost:19002',
+  'https://localhost:19002',
+  'https://admin.zolavn.cf',
+  'zalo-client.vercel.app',
+  'zolavn.cf'
+]
 const corsOptions = {
   origin: function (origin, callback) {
     if (!origin || whitelist.indexOf(origin) !== -1) {
@@ -28,11 +38,15 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cors(corsOptions))
 
 app.use('/', cors(corsOptions), accountRouter)
+app.use('/', cors(corsOptions), phoneBookRouter)
 
 app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*')
   res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS')
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept'
+  )
   next()
 })
 module.exports = app

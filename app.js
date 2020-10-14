@@ -13,8 +13,8 @@ const whitelist = [
   'http://localhost:19002',
   'https://localhost:19002',
   'https://admin.zolavn.cf',
-  'zalo-client.vercel.app',
-  'zolavn.cf'
+  'https://zola-client.vercel.app',
+  'https://zolavn.cf'
 ]
 const corsOptions = {
   origin: function (origin, callback) {

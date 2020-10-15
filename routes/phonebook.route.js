@@ -33,5 +33,6 @@ router.get('/api/v0/users/getListPhoneBookById', accountServiceProxy)
 
 router.get('/api/v0/users/getListRequestId', accountServiceProxy)
 
+router.get('/api/v0/users/getListContactId', accountServiceProxy)
 
 module.exports = router

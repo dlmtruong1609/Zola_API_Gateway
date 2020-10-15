@@ -28,6 +28,20 @@ services:
         #             memory: 150M
         #         reservations:
         #             memory: 100M
+    api_room_chat:
+        container_name: api_room_chat
+        build: ../api-room-chat
+        volumes: 
+            - ../api-room-chat:/myapp
+        command: "npm run dev"
+        # command: "npm start"
+        restart: on-failure
+        # deploy:
+        #     resources:
+        #         limits:
+        #             memory: 150M
+        #         reservations:
+        #             memory: 100M
     api_gateway_chat:
         container_name: api_gateway_chat
         build: .

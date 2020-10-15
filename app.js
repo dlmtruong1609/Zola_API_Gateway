@@ -3,6 +3,7 @@ const logger = require('morgan')
 
 const accountRouter = require('./routes/account.route')
 const phoneBookRouter = require('./routes/phonebook.route')
+const roomRouter = require('./routes/room.route')
 
 const cors = require('cors')
 const whitelist = [
@@ -39,6 +40,7 @@ app.use(cors(corsOptions))
 
 app.use('/', cors(corsOptions), accountRouter)
 app.use('/', cors(corsOptions), phoneBookRouter)
+app.use('/', cors(corsOptions), roomRouter)
 
 app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*')

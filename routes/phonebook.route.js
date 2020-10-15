@@ -29,4 +29,6 @@ router.get('/api/v0/users/textSearch', accountServiceProxy)
 
 router.post('/api/v0/users/deleteFriend', accountServiceProxy)
 
+router.get('/api/v0/users/getListPhoneBookByIdUser', accountServiceProxy)
+
 module.exports = router

@@ -43,5 +43,6 @@ router.post('/api/v0/users/deletePhoneByIdContact', accountServiceProxy)
 
 router.post('/api/v0/users/deletePhoneByIdPhoneContact', accountServiceProxy)
 
+router.post('/api/v0/users/syncPhoneBook', accountServiceProxy)
 
 module.exports = router

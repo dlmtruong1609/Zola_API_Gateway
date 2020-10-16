@@ -37,4 +37,12 @@ router.get('/api/v0/users/getListContactId', accountServiceProxy)
 
 router.get('/api/v0/users/searchUserByPhone', accountServiceProxy)
 
+router.post('/api/v0/users/deletePhoneByIdRequest', accountServiceProxy)
+
+router.post('/api/v0/users/deletePhoneByIdContact', accountServiceProxy)
+
+router.post('/api/v0/users/deletePhoneByIdPhoneBook', accountServiceProxy)
+
+router.post('/api/v0/users/syncPhoneBook', accountServiceProxy)
+
 module.exports = router

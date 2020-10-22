@@ -18,4 +18,8 @@ router.delete('/api/v0/rooms', authMiddleWare.isAuthRoleMember, accountServicePr
 
 router.put('/api/v0/rooms/exit', authMiddleWare.isAuthRoleMember, accountServiceProxy)
 
+router.put('/api/v0/rooms', authMiddleWare.isAuthRoleMember, accountServiceProxy)
+
+router.put('/api/v0/rooms/members', authMiddleWare.isAuthRoleMember, accountServiceProxy)
+
 module.exports = router

@@ -45,4 +45,5 @@ router.post('/api/v0/users/deletePhoneByIdPhoneBook', authMiddleWare.isAuthRoleM
 
 router.post('/api/v0/users/syncPhoneBook', authMiddleWare.isAuthRoleMember, accountServiceProxy)
 
+router.get('/api/v0/users/request/sent', authMiddleWare.isAuthRoleMember, accountServiceProxy)
 module.exports = router

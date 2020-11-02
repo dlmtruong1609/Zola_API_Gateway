@@ -28,7 +28,7 @@ const corsOptions = {
 }
 const Ddos = require('ddos')
 // let ddos = new Ddos({burst:15, limit:10});
-const ddos = new Ddos({ burst: 20, limit: 50 })
+const ddos = new Ddos({ burst: 20, limit: 100 })
 const app = express()
 
 // multipart de tren dau tranh urlencoded

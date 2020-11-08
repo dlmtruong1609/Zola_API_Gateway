@@ -11,7 +11,7 @@ const app = express()
 const httpProxy = require('express-http-proxy')
 const authMiddleWare = require('./middleware/auth.middleware')
 const accountServiceProxy = httpProxy('http://api_room_chat:8080')
-app.use('/', authMiddleWare.isAuth, accountServiceProxy)
+app.use('/', authMiddleWare.isAuthRoleMember, accountServiceProxy)
 
 const cors = require('cors')
 const whitelist = [

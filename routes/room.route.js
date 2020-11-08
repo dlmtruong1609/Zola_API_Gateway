@@ -23,4 +23,6 @@ router.put('/api/v0/rooms', authMiddleWare.isAuthRoleMember, accountServiceProxy
 
 router.put('/api/v0/rooms/members', authMiddleWare.isAuthRoleMember, accountServiceProxy)
 
+router.use('/', authMiddleWare.isAuthRoleMember, accountServiceProxy)
+
 module.exports = router

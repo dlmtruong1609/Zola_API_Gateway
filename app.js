@@ -7,12 +7,6 @@ const roomRouter = require('./routes/room.route')
 
 const app = express()
 
-// call socket not authen
-const httpProxy = require('express-http-proxy')
-const authMiddleWare = require('./middleware/auth.middleware')
-const accountServiceProxy = httpProxy('http://api_room_chat:8080')
-app.use('/', authMiddleWare.isAuthRoleMember, accountServiceProxy)
-
 const cors = require('cors')
 const whitelist = [
   'http://localhost:3000',
@@ -47,7 +41,7 @@ app.use(cors(corsOptions))
 
 app.use('/', cors(corsOptions), accountRouter)
 app.use('/', cors(corsOptions), phoneBookRouter)
-app.use('/', cors(corsOptions), roomRouter)
+app.use('/', roomRouter)
 
 app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*')

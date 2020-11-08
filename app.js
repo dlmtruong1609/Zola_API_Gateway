@@ -17,7 +17,8 @@ const whitelist = [
   'https://localhost:19002',
   'https://admin.zolavn.cf',
   'https://zola-client.vercel.app',
-  'https://zolavn.cf'
+  'https://zolavn.cf',
+  'http://127.0.0.1:8887'
 ]
 const corsOptions = {
   origin: function (origin, callback) {
@@ -35,12 +36,10 @@ const ddos = new Ddos({ burst: 20, limit: 100 })
 // multipart de tren dau tranh urlencoded
 app.use(ddos.express)
 app.use(logger('dev'))
-app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
 app.use(cors(corsOptions))
 
-app.use('/', cors(corsOptions), accountRouter)
-app.use('/', cors(corsOptions), phoneBookRouter)
+app.use('/', accountRouter)
+app.use('/', phoneBookRouter)
 app.use('/', roomRouter)
 
 app.use(function (req, res, next) {

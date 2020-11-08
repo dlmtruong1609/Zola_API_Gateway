@@ -5,6 +5,7 @@ const authMiddleWare = require('../middleware/auth.middleware')
 const accountServiceProxy = httpProxy('http://api_room_chat:8080')
 
 router.post('/api/v0/rooms/single', authMiddleWare.isAuthRoleMember, accountServiceProxy)
+router.post('/api/v0/rooms/single', authMiddleWare.isAuthRoleMember, accountServiceProxy)
 
 router.post('/api/v0/rooms/group', authMiddleWare.isAuthRoleMember, accountServiceProxy)
 

@@ -12,7 +12,7 @@ const accessTokenSecret = process.env.ACCESS_TOKEN_SECRET
  */
 const isAuth = async (req, res, next) => {
   // Lấy token được gửi lên từ phía client
-  const tokenFromClient = req.headers['x-access-token']
+  const tokenFromClient = req.headers['x-access-token'] ? req.headers['x-access-token'] : req.query.token
   if (tokenFromClient) {
     // Nếu tồn tại token
     try {

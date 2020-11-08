@@ -5,6 +5,14 @@ const accountRouter = require('./routes/account.route')
 const phoneBookRouter = require('./routes/phonebook.route')
 const roomRouter = require('./routes/room.route')
 
+const app = express()
+
+// call socket not authen
+const httpProxy = require('express-http-proxy')
+const authMiddleWare = require('./middleware/auth.middleware')
+const accountServiceProxy = httpProxy('http://api_room_chat:8080')
+app.use('/', authMiddleWare.isAuth, accountServiceProxy)
+
 const cors = require('cors')
 const whitelist = [
   'http://localhost:3000',
@@ -29,7 +37,6 @@ const corsOptions = {
 const Ddos = require('ddos')
 // let ddos = new Ddos({burst:15, limit:10});
 const ddos = new Ddos({ burst: 20, limit: 100 })
-const app = express()
 
 // multipart de tren dau tranh urlencoded
 app.use(ddos.express)

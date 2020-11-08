@@ -36,8 +36,6 @@ services:
         command: "npm run dev"
         # command: "npm start"
         restart: on-failure
-        ports: 
-            - "8080:8080"
         # deploy:
         #     resources:
         #         limits:

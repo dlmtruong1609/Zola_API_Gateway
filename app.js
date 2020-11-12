@@ -30,12 +30,12 @@ const corsOptions = {
     }
   }
 }
-const Ddos = require('ddos')
-// let ddos = new Ddos({burst:15, limit:10});
-const ddos = new Ddos({ burst: 20, limit: 100 })
+// const Ddos = require('ddos')
+// // let ddos = new Ddos({burst:15, limit:10});
+// const ddos = new Ddos({ burst: 20, limit: 100 })
 
-// multipart de tren dau tranh urlencoded
-app.use(ddos.express)
+// // multipart de tren dau tranh urlencoded
+// app.use(ddos.express)
 app.use(logger('dev'))
 app.use(cors(corsOptions))
 

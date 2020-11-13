@@ -24,7 +24,8 @@ const whitelist = [
   'https://zola-client.vercel.app',
   'https://zolavn.cf',
   'http://127.0.0.1:8887',
-  'http://localhost:8887'
+  'http://localhost:8887',
+  'https://user1-nu.vercel.app'
 ]
 const corsOptions = {
   origin: function (origin, callback) {

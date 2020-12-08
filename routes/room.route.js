@@ -25,6 +25,6 @@ router.put('/api/v0/rooms/members', authMiddleWare.isAuthRoleMember, accountServ
 
 router.get('/api/v0/rooms/messages/recent', authMiddleWare.isAuthRoleMember, accountServiceProxy)
 
-router.use('/', authMiddleWare.isAuthRoleMember, accountServiceProxy)
+router.use('/', accountServiceProxy)
 
 module.exports = router

@@ -2,7 +2,8 @@ const express = require('express')
 const router = express.Router()
 const httpProxy = require('express-http-proxy')
 const authMiddleWare = require('../middleware/auth.middleware')
-const accountServiceProxy = httpProxy('http://api_phonebook_chat:3210')
+require('dotenv').config()
+const accountServiceProxy = httpProxy(process.env.API_PHONEBOOK)
 
 // phonebook
 router.post('/api/v0/users/addFriend', authMiddleWare.isAuthRoleMember, accountServiceProxy)

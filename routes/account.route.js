@@ -2,7 +2,8 @@ const express = require('express')
 const router = express.Router()
 const httpProxy = require('express-http-proxy')
 const authMiddleWare = require('../middleware/auth.middleware')
-const accountServiceProxy = httpProxy('http://api_account_chat:3333')
+require('dotenv').config()
+const accountServiceProxy = httpProxy(process.env.API_ACCOUNT)
 
 //  account api
 router.post('/api/v0/accounts/signin', accountServiceProxy)

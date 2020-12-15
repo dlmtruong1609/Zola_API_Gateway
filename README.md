@@ -1,7 +1,14 @@
 # CHAT ZOLA
 
 This is application api gateway and authencation
-# # Quick start
+# # Demo: 
+CHAT: `http://zolavn.cf`
+APP: Download [here]()
+# # Frontend Project
+- Web application: `https://gitlab.com/chatonline/zola-client`
+- Mobile application: `https://gitlab.com/chatonline/mobile-fe`
+# # Server
+## Quick start
 ### Prerequisites
 
 1. Git
@@ -22,6 +29,7 @@ Run with Docker
 4. `cd api-gateway-chat`
 5. `docker-compose up -d`
 6. `docker-compose logs -f` to logs info request on server
+7. Url: `http://localhost`
 
 ### Or Run single
 1. `git clone https://gitlab.com/chatonline/api-gateway-chat`

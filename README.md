@@ -12,10 +12,10 @@ APP: Download [here]()
 ### Prerequisites
 
 1. Git
-Run with single
+- Run with single
 2. Node: any 10.x version starting with v10.0.0 or greater
 3. Npm: See [here](https://www.npmjs.com/)
-Run with Docker
+- Run with Docker
 4. Docker: See [here](https://www.docker.com/get-started)
 5. Docker Compose: See [here](https://docs.docker.com/compose/install/)
 ### Run with docker(Microservice)

@@ -7,6 +7,10 @@ APP: Download [here]()
 # # Frontend Project
 - Web application: `https://gitlab.com/chatonline/zola-client`
 - Mobile application: `https://gitlab.com/chatonline/mobile-fe`
+If registration doesn't work because of running out of money, create an account with admin
+- Admin Page `https://admin.zolavn.cf` 
+  Phone: 0323456789
+  Password: 123123
 # # Server
 ## Quick start
 ### Prerequisites
@@ -38,4 +42,7 @@ APP: Download [here]()
 4. `npm run dev` with dev or `npm start` with pm2 
 
 ## System architecture
-![Microservice](https://minhtruong.s3.ap-southeast-1.amazonaws.com/bdf13b73-9ce2-468e-a0e8-64e3003070e2.png)
+![Microservice](https://minhtruong.s3.ap-southeast-1.amazonaws.com/de584886-3652-4e43-9151-4c72d588f404.png)
+
+# Contact
+Email: dlmtruong1609@gmail.com

@@ -28,7 +28,7 @@ router.get('/api/v0/users/getListFriendPhoneBookByPhoneUser', authMiddleWare.isA
 
 router.get('/api/v0/users/textSearch', authMiddleWare.isAuthRoleMember, accountServiceProxy)
 
-router.post('/api/v0/users/deleteFriend', authMiddleWare.isAuthRoleMember, accountServiceProxy)
+router.delete('/api/v0/users/deleteFriend', authMiddleWare.isAuthRoleMember, accountServiceProxy)
 
 router.get('/api/v0/users/getListPhoneBookById', authMiddleWare.isAuthRoleMember, accountServiceProxy)
 
@@ -38,11 +38,11 @@ router.get('/api/v0/users/getListContactId', authMiddleWare.isAuthRoleMember, ac
 
 router.get('/api/v0/users/searchUserByPhone', accountServiceProxy)
 
-router.post('/api/v0/users/deletePhoneByIdRequest', authMiddleWare.isAuthRoleMember, accountServiceProxy)
+router.delete('/api/v0/users/deletePhoneByIdRequest', authMiddleWare.isAuthRoleMember, accountServiceProxy)
 
-router.post('/api/v0/users/deletePhoneByIdContact', authMiddleWare.isAuthRoleMember, accountServiceProxy)
+router.delete('/api/v0/users/deletePhoneByIdContact', authMiddleWare.isAuthRoleMember, accountServiceProxy)
 
-router.post('/api/v0/users/deletePhoneByIdPhoneBook', authMiddleWare.isAuthRoleMember, accountServiceProxy)
+router.delete('/api/v0/users/deletePhoneByIdPhoneBook', authMiddleWare.isAuthRoleMember, accountServiceProxy)
 
 router.post('/api/v0/users/syncPhoneBook', authMiddleWare.isAuthRoleMember, accountServiceProxy)
 

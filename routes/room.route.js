@@ -12,7 +12,7 @@ router.post('/api/v0/rooms/group', authMiddleWare.isAuthRoleMember, accountServi
 
 router.get('/api/v0/rooms', authMiddleWare.isAuthRoleMember, accountServiceProxy)
 
-router.get('/api/v0/rooms/detail', authMiddleWare.isAuthRoleMember, accountServiceProxy)
+router.get('/api/v0/rooms/:id', authMiddleWare.isAuthRoleMember, accountServiceProxy)
 
 router.put('/api/v0/rooms', authMiddleWare.isAuthRoleMember, accountServiceProxy)
 

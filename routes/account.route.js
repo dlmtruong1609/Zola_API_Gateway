@@ -22,8 +22,8 @@ router.get('/api/v0/users/search', authMiddleWare.isAuthRoleMember, accountServi
 router.get('/api/v0/users/list', authMiddleWare.isAuthRoleAdmin, accountServiceProxy)
 router.get('/api/v0/users', authMiddleWare.isAuthRoleAdmin, accountServiceProxy)
 router.get('/api/v0/users/detail', authMiddleWare.isAuthRoleMember, accountServiceProxy)
-router.post('/api/v0/users/add', authMiddleWare.isAuthRoleAdmin, accountServiceProxy)
-router.put('/api/v0/users/update', authMiddleWare.isAuthRoleAdmin, accountServiceProxy)
-router.delete('/api/v0/users/delete', authMiddleWare.isAuthRoleAdmin, accountServiceProxy)
+router.post('/api/v0/users', authMiddleWare.isAuthRoleAdmin, accountServiceProxy)
+router.put('/api/v0/users', authMiddleWare.isAuthRoleAdmin, accountServiceProxy)
+router.delete('/api/v0/users', authMiddleWare.isAuthRoleAdmin, accountServiceProxy)
 
 module.exports = router

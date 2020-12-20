@@ -24,6 +24,6 @@ router.get('/api/v0/users', authMiddleWare.isAuthRoleAdmin, accountServiceProxy)
 router.get('/api/v0/users/detail', authMiddleWare.isAuthRoleMember, accountServiceProxy)
 router.post('/api/v0/users', authMiddleWare.isAuthRoleAdmin, accountServiceProxy)
 router.put('/api/v0/users', authMiddleWare.isAuthRoleAdmin, accountServiceProxy)
-router.delete('/api/v0/users', authMiddleWare.isAuthRoleAdmin, accountServiceProxy)
+router.delete('/api/v0/users/:id', authMiddleWare.isAuthRoleAdmin, accountServiceProxy)
 
 module.exports = router

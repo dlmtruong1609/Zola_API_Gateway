@@ -42,7 +42,7 @@ router.delete('/api/v0/users/requests/deletePhone', authMiddleWare.isAuthRoleMem
 
 router.delete('/api/v0/users/contacts/deletePhone', authMiddleWare.isAuthRoleMember, accountServiceProxy)
 
-router.delete('/api/v0/users/requests/deletePhone', authMiddleWare.isAuthRoleMember, accountServiceProxy)
+router.delete('/api/v0/users/phonebooks/deletePhone', authMiddleWare.isAuthRoleMember, accountServiceProxy)
 
 router.post('/api/v0/users/syncPhoneBook', authMiddleWare.isAuthRoleMember, accountServiceProxy)
 

@@ -14,9 +14,9 @@ router.get('/api/v0/rooms', authMiddleWare.isAuthRoleMember, accountServiceProxy
 
 router.get('/api/v0/rooms/:id', authMiddleWare.isAuthRoleMember, accountServiceProxy)
 
-router.put('/api/v0/rooms', authMiddleWare.isAuthRoleMember, accountServiceProxy)
+router.put('/api/v0/rooms/:id', authMiddleWare.isAuthRoleMember, accountServiceProxy)
 
-router.delete('/api/v0/rooms', authMiddleWare.isAuthRoleMember, accountServiceProxy)
+router.delete('/api/v0/rooms/:id', authMiddleWare.isAuthRoleMember, accountServiceProxy)
 
 router.put('/api/v0/rooms/exit', authMiddleWare.isAuthRoleMember, accountServiceProxy)
 

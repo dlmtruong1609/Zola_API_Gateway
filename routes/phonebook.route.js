@@ -38,11 +38,11 @@ router.get('/api/v0/users/getListContactId', authMiddleWare.isAuthRoleMember, ac
 
 router.get('/api/v0/users/searchUserByPhone', accountServiceProxy)
 
-router.delete('/api/v0/users/deletePhoneByIdRequest', authMiddleWare.isAuthRoleMember, accountServiceProxy)
+router.delete('/api/v0/users/requests/deletePhone', authMiddleWare.isAuthRoleMember, accountServiceProxy)
 
-router.delete('/api/v0/users/deletePhoneByIdContact', authMiddleWare.isAuthRoleMember, accountServiceProxy)
+router.delete('/api/v0/users/contacts/deletePhone', authMiddleWare.isAuthRoleMember, accountServiceProxy)
 
-router.delete('/api/v0/users/deletePhoneByIdPhoneBook', authMiddleWare.isAuthRoleMember, accountServiceProxy)
+router.delete('/api/v0/users/requests/deletePhone', authMiddleWare.isAuthRoleMember, accountServiceProxy)
 
 router.post('/api/v0/users/syncPhoneBook', authMiddleWare.isAuthRoleMember, accountServiceProxy)
 

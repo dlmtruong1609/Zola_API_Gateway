@@ -3,10 +3,11 @@
 This is application api gateway and authencation
 # # Demo: 
 CHAT: `http://zolavn.cf`
-APP: Download [here]()
+
 # # Frontend Project
 - Web application: `https://gitlab.com/chatonline/zola-client`
-- Mobile application: `https://gitlab.com/chatonline/mobile-fe`
+- Mobile application: `https://github.com/thanhtung5598/Mobile-FE-Zola.git`
+
 If registration doesn't work because of running out of money, create an account with admin
 - Admin Page `https://admin.zolavn.cf` 
   Phone: 0323456789
@@ -25,10 +26,10 @@ If registration doesn't work because of running out of money, create an account 
 ### Run with docker(Microservice)
 1. `mkdir ChatZola && cd ChatZola`
 2. Get all project
-`git clone https://gitlab.com/chatonline/api-account-chat`
-`git clone https://gitlab.com/chatonline/api-phonebook-chat`
-`git clone https://gitlab.com/chatonline/api-room-chat`
-`git clone https://gitlab.com/chatonline/api-gateway-chat`
+`git clone https://github.com/dlmtruong1609/api-account-chat`
+`git clone https://github.com/dlmtruong1609/api-phonebook-chat`
+`git clone https://github.com/dlmtruong1609/api-room-chat`
+`git clone https://github.com/dlmtruong1609/api-gateway-chat`
 3. Create .env for each service with env.example
 4. `cd api-gateway-chat`
 5. `docker-compose up -d`
@@ -36,7 +37,7 @@ If registration doesn't work because of running out of money, create an account 
 7. Url: `http://localhost`
 
 ### Or Run single
-1. `git clone https://gitlab.com/chatonline/api-gateway-chat`
+1. `git clone https://github.com/dlmtruong1609/api-gateway-chat`
 2. `npm install`
 3. Change info in .env with env.example
 4. `npm run dev` with dev or `npm start` with pm2 

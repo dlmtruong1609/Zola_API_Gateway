@@ -26,6 +26,7 @@ If registration doesn't work because of running out of money, create an account 
 ### Run with docker(Microservice)
 1. `mkdir ChatZola && cd ChatZola`
 2. Get all project
+
 `git clone https://github.com/dlmtruong1609/api-account-chat`
 `git clone https://github.com/dlmtruong1609/api-phonebook-chat`
 `git clone https://github.com/dlmtruong1609/api-room-chat`

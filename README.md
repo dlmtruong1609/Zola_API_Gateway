@@ -33,12 +33,16 @@ If registration doesn't work because of running out of money, create an account 
 
 `git clone https://github.com/dlmtruong1609/api-room-chat`
 
-
 `git clone https://github.com/dlmtruong1609/api-gateway-chat`
+
 3. Create .env for each service with env.example
+
 4. `cd api-gateway-chat`
+
 5. `docker-compose up -d`
+
 6. `docker-compose logs -f` to logs info request on server
+
 7. Url: `http://localhost`
 
 ### Or Run single

@@ -3,10 +3,10 @@
 This is application api gateway and authencation
 # # Demo: 
 CHAT: `http://zolavn.cf`
-APP: Download [here]()
 # # Frontend Project
 - Web application: `https://gitlab.com/chatonline/zola-client`
 - Mobile application: `https://gitlab.com/chatonline/mobile-fe`
+
 If registration doesn't work because of running out of money, create an account with admin
 - Admin Page `https://admin.zolavn.cf` 
   Phone: 0323456789

@@ -17,7 +17,7 @@ router.post('/api/v0/accounts/code/verify', accountServiceProxy)
 //  user api
 
 router.put('/api/v0/users/profile/update', authMiddleWare.isAuthRoleMember, accountServiceProxy)
-router.put('/api/v0/users/profile/contact/update', authMiddleWare.isAuthRoleMember, accountServiceProxy)
+router.put('/api/v0/users/profiles/contacts', authMiddleWare.isAuthRoleMember, accountServiceProxy)
 router.get('/api/v0/users/search', authMiddleWare.isAuthRoleMember, accountServiceProxy)
 router.get('/api/v0/users/list', authMiddleWare.isAuthRoleAdmin, accountServiceProxy)
 router.get('/api/v0/users', authMiddleWare.isAuthRoleAdmin, accountServiceProxy)

@@ -28,8 +28,12 @@ If registration doesn't work because of running out of money, create an account 
 2. Get all project
 
 `git clone https://github.com/dlmtruong1609/api-account-chat`
+
 `git clone https://github.com/dlmtruong1609/api-phonebook-chat`
+
 `git clone https://github.com/dlmtruong1609/api-room-chat`
+
+
 `git clone https://github.com/dlmtruong1609/api-gateway-chat`
 3. Create .env for each service with env.example
 4. `cd api-gateway-chat`

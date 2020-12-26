@@ -65,6 +65,7 @@ const isAuthRoleMember = async (req, res, next) => {
     try {
       // Thực hiện giải mã token xem có hợp lệ hay không?
       const decoded = await jwtHelper.verifyToken(tokenFromClient, accessTokenSecret)
+      console.log(decoded)
       if (decoded.data.role === 'MEMBER' || decoded.data.role === 'ADMIN') {
         // Nếu token hợp lệ, lưu thông tin giải mã được vào đối tượng req, dùng cho các xử lý ở phía sau.
         req.jwtDecoded = decoded

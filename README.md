@@ -2,7 +2,8 @@
 
 This is application api gateway and authencation
 # # Demo: 
-CHAT: `http://zolavn.cf`
+Video demo: https://www.youtube.com/watch?v=Oz1AzMDXv7o
+CHAT: `https://zolavn.cf` (Server stoped)
 
 # # Frontend Project
 - Web application: `https://github.com/nqduy1999/Zola-Client`

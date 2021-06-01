@@ -1,6 +1,21 @@
-image: 'ubuntu:20.04'
+image: docker:19
+services:
+  - docker:dind
 stages:
+  - build
   - deploy
+before_script:
+  - docker version
+  - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+
+build:
+  stage: build
+  script:
+    - docker pull $CI_REGISTRY_IMAGE:latest || true
+    - docker build --cache-from $CI_REGISTRY_IMAGE:latest --tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA --tag $CI_REGISTRY_IMAGE:latest .
+    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+    - docker push $CI_REGISTRY_IMAGE:latest
+
 deploy:
   stage: deploy
   before_script:
@@ -16,6 +31,5 @@ deploy:
     - master
   script: 
     - echo "Deploying to server"
-    - ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -T root@34.216.76.240 -p 22 "cd /home/zola/api-gateway-chat && git pull"
-    - ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -T root@3.1.194.214 -p 22 "cd /home/zola/api-gateway-chat && git pull"
+    - ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -T $SSH_USER@$HOST -p 22 "docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY} && cd ${PATH_TO_PROJECT} && docker-compose down && docker pull ${CI_REGISTRY_IMAGE}:latest && docker-compose up -d && docker image prune -f"
     - exit
